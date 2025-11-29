@@ -224,7 +224,7 @@ a {
     vertical-align: middle;
     /* aligns with text */
     list-style: none;
-    gap: 2rem;
+    gap: 1.75rem;
 }
 
 .nav-links a {
@@ -373,7 +373,7 @@ a {
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 /* Force wrapping rules so we never end up with 3 in a row */
@@ -428,7 +428,7 @@ a {
 .therapists-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 @media (max-width: 992px) {
@@ -553,6 +553,11 @@ margin: 2rem auto;
     
 }
 
+/* contact form */
+.section-form {
+    padding: 1rem 0;
+}
+
 /* Footer */
 .footer {
     background-color: var(--primary-color);
@@ -619,4 +624,18 @@ margin: 2rem auto;
 
 .social-list__item {
     margin: .5em;
+}
+/* center Psychology Today verified badge */
+.sx-verified-seal,
+.sx-verified-seal img {
+    display: inline-block !important;
+    float: none !important;
+    margin: 0 auto !important;
+    vertical-align: middle;
+}
+
+/* ensure parent container centers inline elements */
+.verified-seal-wrap {
+    text-align: center;
+    margin: 1rem auto;
 }
