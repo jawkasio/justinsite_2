@@ -28,8 +28,7 @@ body {
 
 /* Typography */
 h1,
-h2,
-h3 {
+h2 {
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -43,13 +42,17 @@ h1 {
 h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 
+}
+h3 {
+    color: var(--text-color);
 }
 
 h4 {
     color: var(--primary-color);
+    font-weight: 500;
 
 }
 
@@ -296,14 +299,14 @@ a {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-
 @media (max-width: 900px) {
     h1 {
         font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
     }
 
     .mobile-menu-toggle {
@@ -349,9 +352,6 @@ a {
     }
 }
 
-
-
-
 /* Sections */
 .section {
     padding: 2rem 2rem;
@@ -361,13 +361,18 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .bg-light {
     background-color: #FFFFFF;
 }
-
-
 
 /* Service Higlights */
 .service-list {
@@ -421,21 +426,13 @@ a {
   border-radius: 15px;
 }
 
-
-
-
 /* Therapists Grid */
 .therapists-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-@media (max-width: 992px) {
-    .therapists-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (max-width: 768px) {
     .therapists-grid {
@@ -451,8 +448,7 @@ a {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+
 
 }
 
@@ -471,6 +467,30 @@ a {
     margin: 0 0 1rem 0;
 }
 
+/* Therapist Methods */
+
+
+.therapist-methods {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: .25rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.therapist-methods li {
+    background: var(--secondary-color);
+    font-size: 0.95rem;
+    padding: .25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+
+
 /* Methods List */
 .methods-list {
     list-style: none;
@@ -485,7 +505,7 @@ a {
     padding: 1rem;
     border-radius: 8px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
