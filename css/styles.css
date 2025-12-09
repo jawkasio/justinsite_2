@@ -357,6 +357,12 @@ a {
     padding: 2rem 2rem;
 }
 
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem .5rem;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
