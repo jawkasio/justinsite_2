@@ -585,6 +585,7 @@ a {
     color: var(--text-color);
     transition: var(--transition);
     position: relative;
+    display: inline-block;
 }
 
 .location-content a::after {
