@@ -1,10 +1,11 @@
 @font-face {
-  font-family: "belgiano-serif";
+  font-family: "Belgiano Serif";
   src: url("../fonts/belgiano_serif-webfont.woff2") format("woff2"),
-       url("../fonts/belgiano_serif-webfont.woff") format("woff"),url("../fonts/belgiano_serif-webfont.otf") format("otf"),
-       url("../fonts/belgiano_serif-webfont.ttf") format("ttf");
+       url("../fonts/belgiano_serif-webfont.woff") format("woff"),
+       url("../fonts/belgiano_serif-webfont.otf") format("opentype"),
+       url("../fonts/belgiano_serif-webfont.ttf") format("truetype");
        
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -25,6 +26,7 @@
     --transition: all 0.3s ease;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +46,7 @@ body {
 /* Typography */
 h1,
 h2 {
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 1rem;
     font-family: var(--font-headings);
 }
@@ -90,7 +92,7 @@ a {
     display: inline-block;
     padding: 12px 30px;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: 400;
     transition: var(--transition);
     cursor: pointer;
     letter-spacing: 1px;
@@ -185,7 +187,7 @@ a {
 
 .hero-text {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1rem;
 }
 
@@ -221,14 +223,22 @@ a {
 
 .logo {
     display: flex;
+    align-items: center;
+    overflow: hidden; /* this crops the lowered text */
     font-family: var(--font-headings);
     font-size: 2.5rem;
     font-weight: 500;
     color: var(--primary-color);
-    align-items: center;
-
+    margin-bottom: 0;
+    line-height: 1; /* ← the magic */
 }
 
+
+.logo-text {
+    display: inline-block;
+    transform: translateY(1rem); /* move text down */
+    line-height: 1; /* keeps it tight */
+}
 
 .logo img {
     width: auto;
