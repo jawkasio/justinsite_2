@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "belgiano-serif";
+  src: url("../fonts/belgiano_serif-webfont.woff2") format("woff2"),
+       url("../fonts/belgiano_serif-webfont.woff") format("woff"),url("../fonts/belgiano_serif-webfont.otf") format("otf"),
+       url("../fonts/belgiano_serif-webfont.ttf") format("ttf");
+       
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
     --primary-color: #587E5C;
     /* Sage Green */
@@ -9,6 +21,7 @@
     /* Dark Green/Grey */
     --text-light: #FFFFFF;
     --font-main: 'Outfit', sans-serif;
+    --font-headings: 'Belgiano Serif', serif;
     --transition: all 0.3s ease;
 }
 
@@ -17,6 +30,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 body {
     font-family: var(--font-main);
@@ -31,6 +46,7 @@ h1,
 h2 {
     font-weight: 500;
     margin-bottom: 1rem;
+    font-family: var(--font-headings);
 }
 
 h1 {
@@ -40,7 +56,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
     color: var(--primary-color);
@@ -48,6 +64,9 @@ h2 {
 }
 h3 {
     color: var(--text-color);
+    font-family: var(--font-main);
+    font-size: 1.75rem;
+    font-weight: 500;
 }
 
 h4 {
@@ -202,11 +221,14 @@ a {
 
 .logo {
     display: flex;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    font-weight: 500;
     color: var(--primary-color);
     align-items: center;
+
 }
+
 
 .logo img {
     width: auto;
@@ -217,6 +239,9 @@ a {
 @media (max-width: 600px) {
     .logo img {
         height: 2rem;
+    }
+    .logo {
+        font-size: 2rem;
     }
 }
 
@@ -299,14 +324,18 @@ a {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
         margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
     }
 
     .mobile-menu-toggle {
@@ -455,41 +484,16 @@ a {
 
 
 .profile-pic {
-    float: left;
-    width: 220px;              /* visible box */
-    height: 264px;
-    margin: 0 2rem 1.5rem 0;
-    border-radius: 8px;
-    overflow: hidden;          /* crop happens here */
-    display: block;
-    position: relative;
-
+    margin: 1rem 0;
+    border-radius: 10px;
+    overflow: hidden;
 }
-
-
-
-/* The actual image inside */
 .profile-pic img {
-    width: 120%;               /* make image wider than box */
-    height: 100%;
-    object-fit: cover;
-    object-position: center;   /* center crop */
-    transform: translateX(-5%); /* crop 10% from left */
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
 }
-
-/* smoller */
-@media (max-width: 1000px) {    
-    .profile-pic {
-    width: 160px;              /* visible box */
-    height: 192px;
-    }
-
-}
-/* last h4 paragraph has more margin */
-.last {
-    margin-bottom: 2rem;
-}
-
 /* Mobile: full width, no crop */
 @media (max-width: 768px) {
     .therapists-grid {
@@ -500,7 +504,7 @@ a {
         float: none;
         width: 100%;
         height: auto;
-        margin: 0 0 1rem 0;
+        margin: 1rem 0;
         overflow: visible;
     }
 
@@ -608,8 +612,8 @@ a {
     position: relative;
     overflow: hidden;
     height:0;
-    width: 60%;
-    padding-bottom: 30%;
+    width: 90%;
+    padding-bottom: 50.625%;
     border-radius: 10px;
     margin: 1rem auto;
 }
@@ -623,10 +627,21 @@ a {
     left: 0;
 }
 
+/* intro Video Iframe */
+.responsive-iframe--video {
+    padding-bottom: 50.625%; /* .9 * (9/16) = 50.625 */
+}
+
+/* bio video Iframe */
+.responsive-iframe--bio {
+    width: 100%;
+    padding-bottom: 56.25%; /* 9/16 = 0.5625 */
+}
+
 @media (max-width: 768px) {
     .responsive-iframe {
         width: 100%;
-        padding-bottom: 75%;
+        padding-bottom: 56.25%;
     }
     .map-container {
         gap: 1rem;
